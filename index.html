@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7x7 STORE — Catalog</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <div class="logo">
+          <span class="logo-mark">7x7</span>
+          <span class="logo-text">STORE</span>
+        </div>
+        <div class="header-right">
+          <nav class="categories-nav" id="categoriesNav"></nav>
+          <div class="search-wrapper">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search in catalog..."
+            />
+          </div>
+          <a
+            href="https://t.me/store7x7"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="tg-link"
+          >
+            Telegram channel
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="filters">
+        <div class="filters-row">
+          <div class="filter-group">
+            <label for="minPrice">Price from</label>
+            <input type="number" id="minPrice" min="0" placeholder="0" />
+          </div>
+          <div class="filter-group">
+            <label for="maxPrice">Price to</label>
+            <input type="number" id="maxPrice" min="0" placeholder="50000" />
+          </div>
+          <button id="resetFilters" class="secondary-button">
+            Reset filters
+          </button>
+        </div>
+      </section>
+
+      <section class="catalog">
+        <h1 class="catalog-title">Catalog</h1>
+        <p class="catalog-subtitle">
+        </p>
+
+        <div id="productsGrid" class="products-grid"></div>
+
+        <div id="emptyState" class="empty-state is-hidden">
+          <p>No products found for the selected filters and category.</p>
+          <button id="clearFiltersEmpty" class="primary-button">
+            Show all products
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <span>7x7 STORE</span>
+        <span>All orders and questions — in Telegram.</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
