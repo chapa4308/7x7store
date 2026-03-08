@@ -1,3 +1,11 @@
+// Vercel Analytics loader (добавлено)
+(function () {
+  const s = document.createElement("script");
+  s.defer = true;
+  s.src = "/_vercel/insights/script.js";
+  document.head.appendChild(s);
+})();
+
 const CATEGORY_LABELS = {
   all: "All",
   clothes: "Clothing",
@@ -156,11 +164,9 @@ async function loadProducts() {
       btn.className = "buy-button";
       btn.textContent = "Buy in Telegram";
       btn.addEventListener("click", () => {
-  // Всегда открывать чат с твоим аккаунтом
-  const myAccountUrl = "https://t.me/suckloui"; // <-- сюда свой username
-  window.open(myAccountUrl, "_blank", "noopener,noreferrer");
-});
-
+        const myAccountUrl = "https://t.me/suckloui";
+        window.open(myAccountUrl, "_blank", "noopener,noreferrer");
+      });
 
       footer.appendChild(priceEl);
       footer.appendChild(btn);
@@ -195,7 +201,6 @@ async function loadProducts() {
     clearFiltersEmpty.addEventListener("click", resetFilters);
   }
 
-  // ===== Scroll Reveal Animation =====
   function initScrollReveal() {
     const cards = document.querySelectorAll(".product-card");
     const revealOnScroll = () => {
